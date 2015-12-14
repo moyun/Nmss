@@ -2,8 +2,8 @@
 A Java implementation of *Not the Maximum Segment Sum* problem.
 
 **Not the Maximum Segment Sum** (**NMSS** for short) problem is an interesting problem from the context of [1].
-In this short report I introduce how to compute NMSS problem in \textbf{liner time} and also introduce some concepts and skills of functional programming (FP). 
-As a related topic the \textsl{Maximum Segment Sum} problem has been studied by many researchers [2-4].
+In this short report I introduce how to compute NMSS problem in **liner time** and also introduce some concepts and skills of functional programming (FP). 
+As a related topic the *Maximum Segment Sum* problem has been studied by many researchers [2-4].
 
 
 # References
