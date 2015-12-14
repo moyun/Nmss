@@ -30,10 +30,6 @@ public class Mnss {
     public static class Quadruple {
         int[] data;
 
-        public Quadruple() {
-            data = new int[4];
-        }
-
         public Quadruple(int a, int b, int c, int d) {
             data = new int[4];
             data[0] = a;
@@ -57,7 +53,7 @@ public class Mnss {
     }
 
     static Quadruple h(Quadruple qd, int x) {
-        return new Quadruple(qd.get(0), max(qd.get(1), qd.get(0)) + x, max(qd.get(2), qd.get(1)), max(qd.get(3), max(qd.get(3), qd.get(2))+ x) );
+        return new Quadruple(qd.get(0), max(qd.get(1), qd.get(0)) + x, max(qd.get(2), qd.get(1)), max(qd.get(3), max(qd.get(3), qd.get(2)) + x));
     }
 
     static Quadruple start(int[] tuple) {
@@ -84,11 +80,11 @@ public class Mnss {
      *
      * @return
      */
-    static  Quadruple foldl_h(Quadruple start, int[] ys) {
+    static Quadruple foldl_h(Quadruple start, int[] ys) {
 
         Quadruple qd = new Quadruple(start.data);
         for (int y : ys) {
-            qd = h(qd,y);
+            qd = h(qd, y);
         }
         return qd;
     }
@@ -96,7 +92,7 @@ public class Mnss {
 
     public static void main(String[] args) {
         // test with an example
-        int[] xs ={-4,-3,7,2,1,-2,-1,-4};
+        int[] xs = {-4, -3, 7, 2, 1, -2, -1, -4};
 
         System.out.println(mnss(xs));
     }
