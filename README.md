@@ -1,4 +1,4 @@
-# Mnss
+# Not the Maximum Segment Sum
 A Java implementation of *Not the Maximum Segment Sum* problem.
 
 **Not the Maximum Segment Sum** (**NMSS** for short) problem is an interesting problem from the context of [1].
