@@ -19,7 +19,9 @@
 package com.wap;
 
 import java.util.Arrays;
+import java.util.InputMismatchException;
 import java.util.Optional;
+import java.util.OptionalInt;
 
 public class Mnss {
 
@@ -72,7 +74,9 @@ public class Mnss {
     }
 
     static int mnss(final int[] xs) {
-        return (fourth(foldl_h((start(take(3, xs))), drop(3, xs))));
+        if (xs.length <3)
+            throw( new IllegalArgumentException("input list must have more than 3 elements"));
+        return fourth(foldl_h((start(take(3, xs))), drop(3, xs)));
     }
 
     /**
