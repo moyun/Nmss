@@ -92,7 +92,7 @@ public class Mnss {
 
     public static void main(String[] args) {
         // test with an example
-        int[] xs = {-4, -3, 7, 2, 1, -2, -1, -4};
+        int[] xs = {-4, -3, 7, 2, -1, 2, -1, -4};
 
         System.out.println(mnss(xs));
     }
