@@ -22,7 +22,10 @@
 \maketitle
 
 \textsl{Not the Maximum Segment Sum} (NMSS for short) problem is an interesting problem from the context of \cite{Bird}.
-In this short report I introduce how to compute NMSS problem in \textbf{liner time} and also introduce some concepts and skills of functional programming (FP). As a related topic the \textsl{Maximum Segment Sum} problem has been studied by many researchers \cite{Cole93,HuIT96d,MMMH07}.
+In this short report I introduce how to compute NMSS problem in \textbf{liner time} and also introduce some concepts and skills of functional programming (FP). As a related topic, the \textsl{Maximum Segment Sum} problem has been studied by many researchers \cite{Cole93,HuIT96d,MMMH07}.
+
+For NMSS problem, there are several ways to code it (please refer to the section \ref{remark}), however, the functional way introduced in \cite{Bird} provides a clean, bug-free and runtime efficient algorithm. For Java programmers, such kind of functional thinking will be helpful when 
+handling complicated and miscellaneous problems.
 
 \section{Notations}
 The syntax is mainly based on Haskell but a Java implementation is given.
@@ -58,7 +61,7 @@ data State = E|S|M|N
 The sum of a non-segment is called \textsl{Non-Segment Sum} (NSS).
 
 \section{Specification}
-The MNSS is to find a NSS which has the maximum sum.
+The NMSS is to find a NSS which has the maximum sum.
 
 \[
 \begin{array}{lll}
@@ -204,8 +207,14 @@ start~[x,y,z] &=& (0, \uparrow[x+y+z,y+z,z], \uparrow[x,x+y,y], x+z)
 \end{array}
 \]
 
-\section{Remarks}
-Also, for at-least-length-k problem we can derive O(nk) algorithm.
+\section{Remarks}\label{remark}
+For current definition of \textsl{not the segment}, there is a trivial solution that one can keep all positive numbers and
+ then check if they are conjunctive (during one-pass scan of the input list). In case all positive numbers are not in a segment, the NMSS can be obtained directly, while
+ if all positive numbers are in a segment, one can either remove a positive or introduce a negative number to make a not-segment and
+ get the sum (one must memorize the minimum 3 positive and maximum 3 negative numbers for a constant-number of cases due to the positions where they appear: on the first or last spot of the sequence).
+In such a way, the NMSS could be calculated in $O(n)$ time (with miscellaneous edge-condition-handling). If we restrict the definition of NMSS that we do not allow any conjunctive element from original list, then the problem become more difficult and previous strategy does not work.
+
+Also, for at-least-length-k problem we can derive $O(nk)$ algorithm.
 And, for non-regular conditions such as \( F^*T^nF^*T^nF* ~ (n \geq 0)\) is susceptible
 to the same method.
 The Java implementation is here: \url{https://github.com/moyun/Mnss}.
