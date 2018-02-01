@@ -1,5 +1,7 @@
 # Not the Maximum Segment Sum
 A Java implementation of *Not the Maximum Segment Sum* problem.
+Please read the document for details of this problem [Not the Maximum Segment sum](https://github.com/moyun/Mnss/blob/master/doc/nmssProb.pdf)
+
 
 **Not the Maximum Segment Sum** (**NMSS** for short) problem is an interesting problem from the context of [1].
 In this short report I introduce how to compute NMSS problem in **liner time** and also introduce some concepts and skills of functional programming (FP). 
